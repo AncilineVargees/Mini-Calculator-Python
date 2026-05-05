@@ -1,0 +1,40 @@
+#Mini-calculator using function and dictionary mapping
+#creating function
+def add(a,b):
+    return a+b
+def sub(a,b):
+    return a-b
+def mul(a,b):
+    return a*b
+def div(a,b):
+    if b==0:
+        print("Can't divide by 0")
+        return
+    return a/b
+def mod(a,b):
+    return a%b
+def power(a,b):
+    return a**b
+    
+#Loop for infinte calculator
+while True:
+
+    #Getting Value From User
+    a=float(input("Enter First Value : "))
+    b=float(input("Enter Second Value : "))
+    
+    #Choice of function
+    print("1 : addition, 2 : subtraction, 3 : multiplication, 4 : division, 5 : remainder, 6 : power")
+    choice=int(input("Enter your choice : "))
+    
+    #Dictionary Mapping 
+    result={1:add,2:sub,3:mul,4:div,5:mod,6:power}
+    if choice in result:
+        print(result[choice](a,b))
+    else:
+        print("Invalid choice")
+        
+    #Continue the calculation statement
+    again=input("Do you want to continue : Yes/No")
+    if again.lower() !="yes":
+        break
